@@ -1,0 +1,11 @@
+<div>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <a [routerLink]="['data']" (click)="closeNav()">Data</a>
+    <a [routerLink]="['form']" (click)="closeNav()">Form</a>
+  </div>
+</div>
+
+<div>
+  <span style="font-size:30px;cursor:pointer;float:right" (click)="openNav()">&#9776; Menu</span>
+</div>

@@ -1,0 +1,35 @@
+<form [formGroup]="form">
+  <div class="container-fluid">
+    <div class="row margin">
+      <div class="col-md-4">
+        <span>Name</span>
+        <input type="text" class="form-control" formControlName="name" placeholder="Enter Name">
+        <span *ngIf='form.get("name").hasError("required")'></span>
+      </div>
+      <div class="col-md-4">
+        <span>Surname</span>
+        <input type="text" class="form-control" formControlName="surname" placeholder="Enter Surname">
+        <span *ngIf='form.get("surname").hasError("required")'></span>
+      </div>
+    </div>
+
+    <div class="row margin">
+      <span style="margin-left: 15px;">Address</span>
+      <div class="col-md-12">
+        <textarea name="" id="" formControlName="address" cols="88" rows="10"></textarea>
+        <span *ngIf='form.get("address").hasError("required")'></span>
+      </div>
+      <div class="col-md-8">
+        <div *ngIf="!edit" class="btn-group butn-adjust">
+          <button type="button" class="btn btn-primary" [disabled]="form.invalid" (click)="save()">Save</button>
+        </div>
+        <div *ngIf="edit" class="btn-group butn-adjust">
+          <button type="button" class="btn btn-primary" [disabled]="form.invalid" (click)="update()">Update</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showMessage">
+      <span style="color:red">Thank you !!!!{{message}} , See your entry in data page</span>
+    </div>
+  </div>
+</form>
